@@ -1,0 +1,4 @@
+ng serve -o // открыть сайт с помощью bash
+ng g c \\имя  ng g s \\имя  компонент и сервис
+npm install
+cd ..

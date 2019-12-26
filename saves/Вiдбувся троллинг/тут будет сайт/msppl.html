@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <title>Учителя</title>
+        <meta charset="utf-8" />
+        <body> 
+
+    <div id="zatemnenie">
+                <div id="okno">
+                                <a href="#" class="close" align="right">&#9746;</a><br>
+                                <div>
+                                        <div id="upper" >Форма регистрации<br><br>
+                                                          
+                                <form>
+                                        <input type="text" id="name" placeholder="Имя"><br>
+                                        <input type="password" id="pass" placeholder="Пароль"><br>
+                                        <input type="email" id="email" placeholder="Email"><br>
+                                        <input type="button" id="button1" class="regbut" value="Зарегестрироваться"><br>
+                                </form>
+                                <div>Уже есть аккаунт? <a href="#zatemnenie2">Войти</a></div>
+        
+                                        </div>
+                              
+                                </div>
+                </div>
+              </div>
+              
+    <div id="zatemnenie2">
+                <div id="okno2">
+                                <a href="#" class="close2" align="right">&#9746;</a><br>
+                                <div>
+                                        <div >Вход<br><br>
+                                         <form>       
+                                        <input type="email" id="email1" placeholder="Email"><br>
+                                        <input type="password" id="pass1" placeholder="Пароль"><br>
+                                        <input type="button" id="button11" class="regbut" value="Войти"><br>
+                                         </form>
+
+                                        
+                                <div>Ещё нет аккаунта? <a href="#zatemnenie">Создать</a></div>
+                                        </div>
+                                </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            <div id="wrapper"> <!--Оболочка-->
+                <div id="header">
+                        <table id="magictable" border="3" >
+                                <tr>
+                                        <td><button id="regibut" class="regbut" onclick="regibut()" value="Регистрация"></button></td>
+                                        <td><button id="enterbut" class="regbut" onclick="onexit()"  value="Вход"></button></td> 
+                                </tr>
+                                <tr>
+                                        <td  id="bg" bgcolor="#fdeaa8" colspan="2" align="center" >Смени тему на ту,<br> что нравится тебе!</td>
+                                </tr>
+                                <tr>
+                                        <td><button id="button2" class="regbut">Бисквит</button></td>
+                                        <td><button id="button3" class="regbut">Лазурный</button></td>
+                                        
+                                </tr>
+
+                        </table>
+                        <div id="info"></div>
+                </div> <!--Шапка-->
+
+                <div id="sidebar">
+                                <table align="center">
+                                        <tr>
+                                                <td id="td"><button class="menbut" onclick="location.href='mssite.html';">Главная</button></td>
+                                                <td id="td"><button class="menbut1" onclick="profile()">Профиль</button></td>
+                                                <td id="td"><button class="menbut" onclick="location.href='msmaterials.html';">Библиотека</button></td>
+                                                <td id="td"><button class="menbut" onclick="location.href='msfor.html';">Для учеников</button></td>
+                                                <td id="td"><button class="menbut" onclick="location.href='msppl.html';">Наши преподаватели</button></td>
+                                        </tr>
+                                </table>
+                        </div> <!--Сайдбар-->
+                        <div id="RIGHTBAR">
+                <div id="sidebar1">
+                        <span id="zagl">Календарь</span><br><span id="zagl"> занятий</span>
+                        <table id="calendar2">
+                                <thead>
+                                  <tr><td>‹<td colspan="5"><td>›
+                                  <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                                <tbody>
+                              </table>
+                </div>
+                <div id="sidebar1">
+                        <span id="zagl">Новинка!</span>
+                        <p id="textins">Теперь расписание занятий доступнее!</p>
+                        <p id="textins">На сайт добавлен календарь, в котором синим цветом отмечаются даты проведения занятий по фортепиано и оранжевым цветом занятий по гитаре.</p>
+                        <p id="textins">Учителя могут добавлять занятия в расписание через свой профиль.</p>
+                </div></div>
+                <div id="LEFTBAR">
+                        <div id="sidebar2">
+                                        <span id="zagl">Новинка!</span>
+                                <p id="textins">Была добавлена новая тема на сайт - лазурная.</p>
+                                <p id="textins">По просьбам создать новую контрастную цветовую гамму была создана тема лазурного цвета.</p>
+                        </div>
+                        <div id="sidebar2">
+                                        <span id="zagl" style="padding-left: 10px;">Прослушивание</span>
+                                        <p id="textins">Оставьте свою анкету на рассмотрение учителю:</p>
+                                        <form style="padding: 10px; border: 2px solid grey;" >
+                                                        <span id="textins">Введите номер телефона:</span><br>
+                                                        <input id="Name"  placeholder="Номер телефона"></input><br>
+                                        <span id="textins">Выберите Направление:</span><br>
+                                        <input class="checkbox" type="checkbox" id="PH">Фортепиано</input><br><input class="checkbox" type="checkbox" id="GI">Синтезатор</input><br>
+                                        <span id="textins">Укажите пол:</span><br>
+                                        <input type="radio" name="r" id="M">Мужской</input><br><input type="radio" name="r" id="F">Женский</input><br>
+                                        <input type="button" id="ank" style="border: 5px ridge grey; cursor: pointer;border-radius: 2px; background: var(--button-bgcolor);padding: 2px;" value="Отправить"></input>
+                                </form>
+                        </div>
+                </div>
+                <div id="content">
+                    <span id="zagl">Директор школы</span><br><br>
+                    <span id="zagl">Дмитриенко Егор Сергеевич</span><br>
+                    <img src="me.png" style="align-items: center;width: 764px;border: 5px double grey;">
+                    <p id="textins">По всем вопросам пишите мне в ВКонтакте <a href="https://vk.com/major_rjumba">https://vk.com/major_rjumba</a></p>
+                        <!--<input type="date" id="davaToday"><button  class="regbut" id="buttonP">Фортепиано</button><button  class="regbut" id="buttonG">Гитара</button>--></div> <!--Контент-->
+                <div id="footer"><div id="textf">Адрес: Улица Симферопольская, дом 38<br><br><br> Город:Краснодар<br><br><br>
+                    Контактный телефон: <span style="font-size:medium;">+79180236559</span><br><br><br>
+                    Негосударственное не очень бюджетное учреждение дополнительного образования
+            </div></div> <!--Подвал-->
+                </div>
+                
+        </body>
+
+        <script src="script.js"></script>
+</html>

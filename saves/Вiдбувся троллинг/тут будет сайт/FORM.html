@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+
+
+</head>
+<body><!--
+<style>
+input{
+
+}
+</style> -->
+<form>
+<input class="input" type="text" id = "name" placeholder="Имя" max="20" required><br>
+<input type="text" id = "surname" placeholder="Фамилия"required><br>
+<input type="text" id = "secname" placeholder="Отчество"><br>
+<input type="text" id = "mail" placeholder="Email" required><br>
+<input type="password" id = "password" placeholder="Пароль" required><br>
+<input type="date" id = "date" placeholder="Дата Рождения" max="2015-01-01" min="1900-01-01"><br>
+<input type="radio" name="title" id="F" value="Женщина"><label for="r1"> Женщина</label>
+<input type="radio" name="title" id="M" value="Мужчина"><label for="r2">Мужчина</label><br>
+<input type="submit" id = "button" value="Зарегестрироваться"><br>
+</form>
+
+
+
+
+<script>
+    function getCheckedradio() {
+        if((document.getElementById("M")).checked)
+        radio1=1;else {if((document.getElementById("F")).checked) radio1=2; else radio1=""}
+      return(radio1);}
+    function AddUser(event){
+                var name = document.getElementById("name").value;
+                var surname = document.getElementById("surname").value; 
+                var secname = document.getElementById("secname").value; 
+                var password = document.getElementById("password").value;
+                var email = document.getElementById("mail").value; 
+                var date = document.getElementById("date").value; 
+                var s = getCheckedradio();
+                if(s===1) s="Мужской";else{
+                if(s===2) s="Женский";else s="";}
+                var nameexp = /^[А-Я]/
+                var passwordexp = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{10,300}/
+                var emailexp =/^([a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-z]+)$/
+                if(nameexp.test(name)&&nameexp.test(surname)&&(nameexp.test(secname)||secname==="")&&emailexp.test(email)&&passwordexp.test(password)){
+                {     let user = {
+                    "Name": name,
+                    "Surname":surname,
+                    "Secname":secname,
+                    "Email": email,
+                    "Password": password,
+                    "Date":date,
+                    "Floor":s,
+                };
+                    localStorage.setItem("user",JSON.stringify(user));}
+                }
+                else   
+                {
+                    if (!(nameexp.test(name))&&!(name==="")) 
+                    document.getElementById("name").innerHTML = "Запишите имя с большой буквы";
+                    if (!(nameexp.test(surname))&&!(surname==="")) 
+                    document.getElementById("surname").innerHTML = "Запишите фамилию с большой буквы";
+                    if (!(nameexp.test(secname))&&!(secname==="")) 
+                    document.getElementById("secname").innerHTML = "Запишите отчество с большой буквы";
+                    if (!(emailexp.test(email))&&!(email===""))  
+                    document.getElementById("mail").innerHTML = "Некорректная почта";
+                    if (!(passwordexp.test(password))&&!(password===""))
+                    document.getElementById("password").innerHTML = "пароль должен содержать строчные и заглавные английские буквы и цифры";
+                }} 
+                
+            document.getElementById("button").addEventListener('click', AddUser); 
+</script>
+</body>
+</html>

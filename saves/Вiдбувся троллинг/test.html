@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+           #div1 {
+            position: absolute;
+            top: 100px;
+            left: 43%;
+        }
+    </style>
+    </head>
+    <body>
+        <script>
+         var divElement = document.getElementById("div1");
+         function mess(){
+             alert('ВОЛК СКАЗАЛ "ШАЛОМ" И СВИНЬИ ВЫДОХНУЛИ')
+         }
+         divElement.onclick = mess;
+        var order={
+            orderID: 12345,
+            shopperName: "Ivan Ivanov",
+            shopperEmail: "ivanov@example.com",
+            contents: [
+                {
+                productID: 34,
+                productName: "Super",
+                quantity: 3,
+            },
+            {
+                productID: 56,
+                productName: "Wonderfull",
+                quantity: 3,
+            }
+
+
+            ],
+            orderComplited: true,
+        }
+        var data = {
+            name: "Rick",
+            age: 8,
+            email: "RickEightYearsOldPoshliy@yandex.com"
+        }
+        window.localStorage.setItem("login", JSON.stringify(data))
+
+        var pers = JSON.parse(window.localStorage.getItem("login"));
+        document.write(pers.name + "   " + pers.age + "   " + pers.email);
+        
+        </script>
+        <form>
+            <input type="text" id="name" placeholder="ім'я"><br>
+            <input type="password" id="pass" placeholder="Пароль"><br>
+            <input type="email" id="email" placeholder="Email"><br>
+            <input type="button" id="button" value="реєстрація" onclick="AddUser()">
+
+        </form>
+        <script>
+            function AddUser(){
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("pass").value;
+        var email = document.getElementById("email").value;
+        if(name.length > 3 && name.length < 7){
+            event.preventDefault();
+            document.getElementById("name").style.borderColor = "red";
+        }
+        var user = {
+            Name: name,
+            Password: password,
+            Email: email
+        }
+            
+
+        localStorage.setItem("user",JSON.stringify(user));
+            }
+        </script>
+    </body>
+</html>

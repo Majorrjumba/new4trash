@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let Task of todoService.TaskArray; let i = index">
+        <span [class.done]="Task.completed">
+            <input type="checkbox" [checked]="Task.completed" (change)="OnChange(Task.id)">
+            <strong>{{i+1}}</strong>{{Task.text}}
+        </span>
+    </li>
+</ul>

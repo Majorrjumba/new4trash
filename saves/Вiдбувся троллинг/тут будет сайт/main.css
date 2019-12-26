@@ -1,0 +1,417 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+*{font-family: 'Courier New', Courier, monospace;
+  font-weight:700;}
+
+
+
+:root{
+--background-background: linear-gradient(90deg, rgba(255,218,170,1) 0%, rgba(255,228,194,1) 16%, rgba(255,237,214,1) 50%, rgba(255,228,194,1) 84%, rgba(255,218,170,1) 100%);  
+--button-bgcolor:#fdeaa8;
+--regi-color:"";
+--prof-color:"";
+}
+
+
+#prof{
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+a {
+  text-decoration:none; /*Убираем стандартное подчёркивание ссылки если оно ещё не убрано*/
+  display: inline-block; /*делаем чтобы наша ссылка из строчного элемента превратилась в строчно-блочный 
+  line-height: 1; /*Задаём высоту строки (можно в пикселях)*/
+  color:#2F73B6;/*Задаём цвет ссылки*/
+  }
+  a:after {
+  display: block; /*превращаем его в блочный элемент*/
+  content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+  height: 3px; /*задаём высоту линии*/
+  width: 0%; /*задаём начальную ширину элемента (линии)*/
+  background-color: #225384; /*цвет фона элемента*/
+  transition: width 0.4s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды)*/
+  }
+  a:hover:after,
+  a:focus:after {
+  width: 100%;
+  }
+  a:hover{
+  color:#225384;
+  cursor: pointer;
+  } 
+
+input{
+  border-radius: 2px;
+  background-color: cornsilk;
+}
+input:hover{
+  background-color: rgba(100, 148, 237, 0.39);}
+
+
+body{
+  background: var(--background-background);
+}
+#td{
+  width: 246px;
+  align-self: auto;
+  text-align: center;
+}
+
+   #wrapper{
+    width: 1250px; /* Ширина */
+    outline: 1px solid #787274; /* Временная рамка */
+    padding: 10px; /* Внутренний отступ */
+    margin: 0 auto; /* Выравнивание по центру экрана монитора */
+    padding: 10px;
+}
+#zagl{
+  font-size: x-large;text-align: center;
+  padding:10px;
+  padding-left: 40px;
+  align-self: center;
+}
+#header{
+    height: 160px; 
+    border-radius: 5px;
+    background-size: 50%;
+    background:url("background.png"); /* Фоновый цвет */
+    margin-bottom: 10px; /* Отступ снизу */
+    padding: 20px;
+}
+#sidebar{
+    height: 54px; /* Высота, временная. Высота всем блокам задаётся только для предварительной отладки. В дальнейшем высота будет определяться автоматически в зависимости от содержания блока. */
+    border-radius: 5px;
+    background:radial-gradient(circle, rgba(202, 202, 202, 0.322)90%,rgba(202, 202, 202, 0.027)100%);
+    margin-bottom: 10px; /* Отступ снизу */
+}
+#RIGHTBAR{
+  float: right;
+  width: 210px;
+}
+#sidebar1{
+  min-height: 150px; /* 185примерная */
+  width: 210px;
+  float: right;
+  border: 3px solid black;
+  border-radius: 5px;
+  background:var(--button-bgcolor);
+  margin-bottom: 10px; /* Отступ снизу */
+}
+#textins{
+  padding: 3px;
+
+}
+#textf{
+  font-size: smaller;
+  padding: 3px;
+
+}
+#LEFTBAR{
+  float: left;
+  width: 210px;
+}
+#sidebar2{
+  min-height: 150px; /* Высота, временная. Высота всем блокам задаётся только для предварительной отладки. В дальнейшем высота будет определяться автоматически в зависимости от содержания блока. */
+  width: 210px;
+  float: left;
+  border: 3px solid black;
+  border-radius: 5px;
+  background:var(--button-bgcolor);
+  margin-bottom: 10px; /* Отступ снизу */
+}
+#info{
+  background: var(--button-bgcolor);
+  border-radius: 4px;
+  border: 3px solid black;
+  text-align:  center;
+  display: inline-block;
+  padding: 4px, 4px, 4px, 4px;
+}
+#content{min-height: 600px;
+    border: 3px solid black;
+    margin-left: 217px;
+    margin-right: 217px;
+    padding: 20px;
+    width: 770px;
+    border-radius: 5px;
+    background:radial-gradient(circle, rgba(202, 202, 202, 0.322)90%,rgba(202, 202, 202, 0.027)100%);
+    margin-bottom: 10px; /* Отступ снизу */
+}
+#footer{min-height: 150px;
+    margin-left: 217px;
+    margin-right: 217px;
+    border-radius: 5px;
+    padding-top:10px;
+    padding-left:30px;
+    padding-right:30px;
+    background:radial-gradient(circle, rgba(202, 202, 202, 0.322)90%,rgba(202, 202, 202, 0.027)100%);
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.magictable{
+  align-self: flex-start;
+  background-color:#F6F6F6; color:#FFF;
+}
+
+
+.menbut { /* Внешний вид кнопки */
+  color: #524E49; /* Цвет текста */
+  background: var(--button-bgcolor) ; /* Фоновый цвет */
+  padding: 10px; /* Внутренний отступ текста от границ блока. Определяет размер кнопки */
+  font-size: 20px; /* Размер текста */
+  border-radius: 5px; /* Радиус закругления уголков */
+  box-shadow: 0px 1px 3px; /* Тень */
+  position: relative; /* Относительное позиционирование, для установки абсолютного позиционирования для наплывания */
+  width: 100%;
+  }
+  .menbut:before { /* Псевдо элемент для создания наплывания */
+  content:''; /* Обязательное свойство псевдоэлемента :before */
+  position: absolute; /* Позиционируем абсолютно */
+  top: 0px; /* Позиция по границам блока */
+  left: 0px;
+  width: 100%; /* Ширина по границам кнопки */
+  height: 0px; /* Высота 0, поэтому невиден */
+  background: rgba(148,144,143,0.4); /* Фоновый цвет наплывания */
+  border-radius: 5px; /* Радиус уголков */
+   /* Анимация. Движение. Трансформируются все свойства (all) в течении 0.5 секунды, быстро начинается и к концу замедляется (ease-out) */
+  }
+  .menbut:hover:before { /* При наведении */
+  height: 43px;
+  cursor: pointer; /* Высота наплывания становится равной высоте кнопки */
+  }
+  
+  .menbut1 { /* Внешний вид кнопки */
+    color: #524E49; /* Цвет текста */
+    background: var(--button-bgcolor) ; /* Фоновый цвет */
+    padding: 10px; /* Внутренний отступ текста от границ блока. Определяет размер кнопки */
+    font-size: 20px; /* Размер текста */
+    border-radius: 5px; /* Радиус закругления уголков */
+    box-shadow: 0px 1px 3px; /* Тень */
+    position: relative; /* Относительное позиционирование, для установки абсолютного позиционирования для наплывания */
+    width: 100%;
+    }
+    .menbut1:before { /* Псевдо элемент для создания наплывания */
+    content:''; /* Обязательное свойство псевдоэлемента :before */
+    position: absolute; /* Позиционируем абсолютно */
+    top: 0px; /* Позиция по границам блока */
+    left: 0px;
+    width: 100%; /* Ширина по границам кнопки */
+    height: 0px; /* Высота 0, поэтому невиден */
+    background: var(--prof-color); /* Фоновый цвет наплывания */
+    border-radius: 5px; /* Радиус уголков */
+     /* Анимация. Движение. Трансформируются все свойства (all) в течении 0.5 секунды, быстро начинается и к концу замедляется (ease-out) */
+    }
+    .menbut1:hover:before { /* При наведении */
+    height: 43px;
+    cursor: pointer; /* Высота наплывания становится равной высоте кнопки */
+    }
+#enterbut:before{
+background: var(--regi-color);
+}
+  .regbut { /* Внешний вид кнопки */
+    color: #524E49; /* Цвет текста */
+    background: var(--button-bgcolor); /* Фоновый цвет */
+    padding: 10px; /* Внутренний отступ текста от границ блока. Определяет размер кнопки */
+    font-size: 15px; /* Размер текста */
+    border-radius: 5px; /* Радиус закругления уголков */
+    box-shadow: 0px 1px 3px; /* Тень */
+    position: relative; /* Относительное позиционирование, для установки абсолютного позиционирования для наплывания */
+    width: 200px;
+    
+    }
+    .regbut:before { /* Псевдо элемент для создания наплывания */
+      content:''; /* Обязательное свойство псевдоэлемента :before */
+      position: absolute; /* Позиционируем абсолютно */
+      top: 0px; /* Позиция по границам блока */
+      left: 0px;
+      width: 100%; /* Ширина по границам кнопки */
+      height: 0px; /* Высота 0, поэтому невиден */
+      background: rgba(148, 144, 143, 0.4); /* Фоновый цвет наплывания */
+      border-radius: 5px; /* Радиус уголков */
+       /* Анимация. Движение. Трансформируются все свойства (all) в течении 0.5 секунды, быстро начинается и к концу замедляется (ease-out) */
+      }
+      .regbut:hover:before { /* При наведении */
+      height: 100%;
+      cursor: pointer;  /* Высота наплывания становится равной высоте кнопки */
+      }
+
+
+
+
+
+
+#upper{z-index: 9999;}
+  input{
+    z-index: 9999;
+  }
+  #zatemnenie {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 8888;
+  }
+  #okno {
+    width: 300px;
+    height: 190px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #dde65f;
+    border-radius: 10px;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8888;
+    margin: auto;
+    background: #fff;
+  }
+  #zatemnenie:target {display: block;
+    z-index: 8888;}
+  .close {
+    display: inline-block;
+    color: black;
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 14pt;
+    cursor:pointer;
+    z-index: 8888;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+
+
+
+
+
+
+
+  
+  #zatemnenie2 {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 8888;
+  }
+  #okno2 {
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #dde65f;
+    border-radius: 10px;
+    color: black;
+    position: absolute;
+    height: 160px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8888;
+    margin: auto;
+    background: #fff;
+  }
+  #zatemnenie2:target {display: block;
+    z-index: 8888;}
+  .close2 {
+    display: inline-block;
+    color: black;
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 14pt;
+    cursor:pointer;
+    z-index: 8888;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+
+
+
+
+  #calendar2 {
+    width: 100%;
+    font: monospace;
+    line-height: 1.2em;
+    font-size: 15px;
+    text-align: center;
+  }
+  #calendar2 thead tr:last-child {
+    font-size: small;
+    color: rgb(85, 85, 85);
+  }
+  #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+    color: rgb(50, 50, 50);
+  }
+  #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+    cursor: pointer;
+  }
+  #calendar2 tbody td {
+    color: rgb(44, 86, 122);
+  }
+  #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+    color: rgb(231, 140, 92);
+  }
+  #calendar2 tbody td.lpday {background: rgb(44,86,122);
+    background: linear-gradient(135deg, rgba(44,86,122,1) 0%, rgba(44,86,122,0.5) 50%, rgba(44,86,122,0.5) 50%, rgba(44,86,122,1) 100%);
+    color: rgb(50, 50, 50);
+  }
+  #calendar2 tbody td.lgday {background: rgb(44,86,122);
+    background: linear-gradient(135deg, rgba(255,145,0,1) 0%, rgba(255,145,0,0.5) 50%, rgba(255,145,0,0.5) 50%, rgba(255,145,0,1) 100%);
+    color: rgb(50, 50, 50);
+  }
+  #calendar2 tbody td.lgpday {background: rgb(44,86,122);
+    background: linear-gradient(135deg, rgba(44,86,122,1) 0%, rgba(44,86,122,0.5) 50%, rgba(255,145,0,0.5) 50%, rgba(255,145,0,1) 100%);
+    color: rgb(50, 50, 50);
+  }
+  #calendar2 tbody td.today {
+    outline: 3px solid red;
+    color: rgb(44, 86, 122);
+  }
+  
